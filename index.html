@@ -1,0 +1,66 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertically Scrollable Divs</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <!-- Link to the external CSS file -->
+  </head>
+  <body>
+    <!-- <script type="module" src="./animation.js"></script> -->
+    <div id="div1" class="background-div">
+      <div class="text-container">
+        <div class="text1-div1">Text Portion 1</div>
+        <div class="text2-div1">Text Portion 2</div>
+        <div class="text3-div1">Text Portion 3</div>
+      </div>
+      <!-- Content for the first div -->
+      <img src="./assets/bg_10.png" alt="Image 1" />
+      <!-- Add more content as needed -->
+    </div>
+    <div id="div2" class="background-div">
+      <div class="text-container">
+        <div class="text1-div1">Text Portion 1</div>
+        <div class="text2-div1">Text Portion 2</div>
+        <div class="text3-div1">Text Portion 3</div>
+      </div>
+      <!-- Content for the second div -->
+      <img src="./assets/bg_11.png" alt="Image 1" />
+      <!-- Add more content as needed -->
+    </div>
+
+    <script type="module">
+      // GSAP Animation Logic
+      const tl = gsap.timeline();
+
+      // Animate the first portion of text in div1
+      tl.fromTo(
+        ".text1-div1",
+        { y: "100%" },
+        { y: "0%", duration: 1, ease: "power4.out" }
+      );
+
+      // Animate the second portion of text in div1
+      tl.fromTo(
+        ".text2-div1",
+        { y: "100%" },
+        { y: "0%", duration: 1, ease: "power4.out" },
+        "-=0.5"
+      );
+
+      // Animate the third portion of text in div1
+      tl.fromTo(
+        ".text3-div1",
+        { y: "100%" },
+        { y: "0%", duration: 1, ease: "power4.out" },
+        "-=0.5"
+      );
+
+      // Repeat the animation logic for div2 and div3 as needed
+
+      // Start the timeline
+      tl.play();
+    </script>
+  </body>
+</html>
